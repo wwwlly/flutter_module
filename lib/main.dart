@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'layout_article.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -58,6 +60,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _gotoLayoutArticle() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const HomePage(),
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -103,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _gotoLayoutArticle,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
